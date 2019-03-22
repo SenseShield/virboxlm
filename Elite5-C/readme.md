@@ -46,6 +46,6 @@ keep_alive 单独演示 Demo。演示使用云锁时调用`slm_keep_alive`返回
 丢锁补锁 & 丢锁补锁与普通锁的转换。演示将硬件加密锁设置为定期激活锁和恢复为普通锁的方法。
 
 ## 特别说明
-runtime 示例程序中依赖`slm_runtime.dll`（或`.lib`），开发阶段使用`slm_runtime_dev.dl（将文件名拷贝至程序目录下并改名为`slm_runtime.dll` ），调试代码时不会触发反调试而造成程序闪退；当软件正式发版时必须使用`slm_runtime.dll`（注意不是`slm_runtime_dev.dll`），若发版使用可调试版本（`slm_runtime_dev.dll`）将导致正式发版能够被调试器附加调试可调试，极大程度降低发售软件的安全性。
+runtime 示例程序中依赖`slm_runtime.dll`（或`.lib`），开发阶段使用`slm_runtime_dev.dll`（将文件名拷贝至程序目录下并改名为`slm_runtime.dll` ），调试代码时不会触发反调试而造成程序闪退；当软件正式发版时必须使用`slm_runtime.dll`（注意不是`slm_runtime_dev.dll`），若发版使用可调试版本（`slm_runtime_dev.dll`）将导致正式发版能够被调试器附加调试可调试，极大程度降低发售软件的安全性。
 
 **备注：** 反调试，全称反调试保护，所有调用 runtime 库的应用程序在执行许可登录（`slm_login`）后会受到 Virbox 许可服务的反调试安全保护，当黑客使用调试器分析被保护应用程序逻辑时，深思许可服务会检测到并在 10 秒后终止被调试进程，提高安全性。
